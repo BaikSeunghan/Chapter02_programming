@@ -6,12 +6,12 @@ public class quiz12 {
     public boolean solution(int x) {
 
         boolean answer = true;
-        int b = 0;
+        int abc = 0;
         String[] a = Integer.toString(x).split("");
         for (String aa : a) {
-            b += Integer.parseInt(aa);
+            abc += Integer.parseInt(aa);
         }
-        if (x % b != 0) {
+        if (x % abc != 0) {
             answer = false;
         }
 
