@@ -1,26 +1,37 @@
 package day01;
 
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class quiz02 {
 
     // array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수
-    public List solution(int divisor) {
+    public int[] solution(int[] arr, int divisor) {
 
-        int[] arr1 = {5, 9, 7, 10};
-        int[] arr2 = {2, 36, 1, 3};
-        int[] arr3 = {3, 2, 6};
+        int[] answer = {};
 
-        List<Integer> answer = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<Integer>();
+        for (int i = 0; i < arr.length; i++) {
 
-        for (int i = 0; i < arr3.length; i++) {
-            if (arr3[i] % divisor == 0) {
-                answer.add(arr3[i]);
-            } else if (answer.size() == 0) {
-                answer.add(-1);
+            if (arr[i] % divisor == 0) {
+                list.add(arr[i]);
             }
         }
+        if (list.size() == 0) {
+            list.add(-1);
+        }
+
+        answer = list.stream().mapToInt(i -> i).toArray();
+        Arrays.sort(answer);
+
         return answer;
     }
+
+    // 고수 코드
+//    int[] answer = Arrays.stream(arr).filter(factor -> factor % divisor == 0).toArray();
+//    if(answer.length == 0) answer = new int[] {-1};
+//    Arrays.sort(answer);
+//    return answer;
 }

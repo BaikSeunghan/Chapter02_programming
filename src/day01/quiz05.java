@@ -34,12 +34,14 @@ public class quiz05 {
 //        return answer;
 
         // 일반고수
+        // 제한 상황에서 힌트를 얻고 차근하게 나아가자
         String answer = "";
         String[] str = s.split("");
 
         int idx = 0;
         for (int i = 0; i < str.length; i++) {
-            if (str[i].equals(" ")) {
+
+            if (str[i].equals(" ")) {   // 단어별 기준 정하는 부분
                 idx = 0;
             } else if (idx % 2 == 0) {
                 str[i] = str[i].toUpperCase();
@@ -54,7 +56,7 @@ public class quiz05 {
     }
 }
 
-//        개고수
+//        // 개고수
 //        String answer = "";
 //        int cnt = 0;
 //        String[] array = s.split("");

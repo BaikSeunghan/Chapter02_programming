@@ -27,5 +27,20 @@ public class quiz15 {
         // List<Integer> -> int[] 로 변환하는 방법  >> Java8 Stream 이용
         return answerList.stream().mapToInt(i -> i).toArray();
 
+
+        // 고수분의 코드
+//        ArrayList<Integer> tempList = new ArrayList<Integer>();
+//        int preNum = 10;
+//        for(int num : arr) {
+//            if(preNum != num)
+//                tempList.add(num);
+//            preNum = num;
+//        }
+//        int[] answer = new int[tempList.size()];
+//        for(int i=0; i<answer.length; i++) {
+//            answer[i] = tempList.get(i).intValue();
+//        }
+//        return answer;
+
     }
 }

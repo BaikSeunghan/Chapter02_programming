@@ -1,21 +1,27 @@
 package day01;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.format.TextStyle;
-import java.util.Locale;
 
 public class quiz03 {
 
     public String solution(int n) {
+
         String supark = "";
-        for (int i = 0; i < 5; i++) {
-            supark += "수";
-            if (supark.substring(i) != null) {
+
+        for (int i = 1; i <= n; i++) {
+
+            if (i % 2 != 0) {
+                supark += "수";
+            } else {
                 supark += "박";
             }
+
         }
-        System.out.println("supark = " + supark);
-        return supark.substring(0,n);
+        return supark;
+
+        // 더 깔끔하게
+//        for (int i = 0; i < n; i++) {
+//            supark += i % 2 == 0 ? "수" : "박";
+//        }
+//        return supark;
     }
 }
