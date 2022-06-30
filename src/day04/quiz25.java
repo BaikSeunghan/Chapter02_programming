@@ -11,29 +11,29 @@ public class quiz25 {
     public int solution(int left, int right) {
         int answer = 0;
 
-        int[] a = new int[right - left + 1];
+        int[] intList = new int[right - left + 1];
 
-        List<Integer> list = new ArrayList<Integer>();
-        for (int i = 0; i < a.length; i++) {
-            a[i] = left;
+        List<Integer> yaksuList = new ArrayList<Integer>();
+        for (int i = 0; i < intList.length; i++) {
+            intList[i] = left;
             left++;
 
             // 약수값을 구하는 핵심로직
-            for (int b = 1; b <= a[i]; b++) {
-                if (a[i] % b == 0) {
-                    list.add(b);
+            for (int b = 1; b <= intList[i]; b++) {
+                if (intList[i] % b == 0) {
+                    yaksuList.add(b);
                 }
             }
-            if (list.size() % 2 == 0) {
-                a[i] = +a[i];
-                list.clear();
-            } else if (list.size() % 2 != 0) {
-                a[i] = -a[i];
-                list.clear();
+            if (yaksuList.size() % 2 == 0) {
+                intList[i] = +intList[i];
+                yaksuList.clear();
+            } else if (yaksuList.size() % 2 != 0) {
+                intList[i] = -intList[i];
+                yaksuList.clear();
             }
         }
 
-        for (int c : a) {
+        for (int c : intList) {
             answer += c;
         }
         return answer;
